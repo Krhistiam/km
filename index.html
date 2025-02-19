@@ -11,6 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         /* Imagen de portada con transparencia */
@@ -98,7 +99,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
+            text-align: left;
             padding: 20px;
         }
 
@@ -110,12 +111,31 @@
 
         #projects h2 {
             margin-bottom: 10px;
+            font-size: 2em;
+            color: #555;
+            text-decoration: underline;
         }
 
         #projects h3 {
             margin-top: 5px;
             font-size: 1.1em;
             color: #555;
+        }
+
+        #projects p {
+            font-size: 1em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #projects ul {
+            list-style-type: disc;
+            margin: 10px 0 20px 20px;
+            padding-left: 20px;
+        }
+
+        #projects ul li {
+            margin-bottom: 10px;
         }
 
         /* Contenedor de portafolios en cuadrícula 2x2 */
@@ -220,8 +240,30 @@
     <div class="container">
         <!-- Sección Proyectos centrada -->
         <section id="projects">
-            <h2>Proyectos</h2>
-            <h3>Análisis de Sentimiento Encuesta Hotelera</h3>
+            <h2>Dashboard de Análisis de Encuestas para Hotelería</h2>
+            <p>Este proyecto consiste en un dashboard interactivo diseñado para analizar los comentarios y quejas de los
+                huéspedes en un entorno hotelero. La herramienta permite a los departamentos identificar incidencias
+                específicas, clasificar comentarios mediante análisis de sentimiento y tomar decisiones basadas en datos
+                para mejorar la experiencia del cliente.</p>
+
+            <h3>Funcionalidades clave:</h3>
+            <ul>
+                <li>Análisis de comentarios por departamento y número de habitación.</li>
+                <li>Clasificación de comentarios en positivos, negativos y neutros.</li>
+                <li>Filtros interactivos para seguimiento de incidencias por fecha y área.</li>
+            </ul>
+
+            <h3>Impacto:</h3>
+            <ul>
+                <li>Mejora en la satisfacción del huésped.</li>
+                <li>Optimización de recursos y reducción de tiempos de respuesta.</li>
+                <li>Toma de decisiones estratégicas basada en datos.</li>
+            </ul>
+
+            <h3>Tecnologías utilizadas:</h3>
+            <ul>
+                <li>Power BI, Procesamiento de Lenguaje Natural (NLP).</li>
+            </ul>
 
             <!-- Contenedor de portafolios en cuadrícula 2x2 -->
             <div class="portfolio-container">
@@ -245,8 +287,8 @@
 
         <!-- Sección Sobre mí ocupando todo el ancho con mismo fondo que la navbar -->
         <section id="about-section">
-            <p>Soy un analista de datos apasionado por transformar datos en insights para decisiones estratégicas.
-                Me especializo en transformar datos en insights accionables mediante dashboards y reportes visuales que
+            <p>Soy un analista de datos apasionado por transformar datos en insights para decisiones estratégicas. Me
+                especializo en transformar datos en insights accionables mediante dashboards y reportes visuales que
                 facilitan la toma de decisiones.</p>
             <img src="foto.jpg" alt="Foto de perfil">
         </section>
