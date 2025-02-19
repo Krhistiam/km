@@ -113,7 +113,6 @@
             margin-bottom: 10px;
             font-size: 2em;
             color: #555;
-            text-decoration: underline;
         }
 
         #projects h3 {
@@ -166,23 +165,97 @@
         #about-section {
             display: flex;
             align-items: center;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(96, 96, 96, 0.8);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
+            margin-top: 20px;
+            border-radius: 10px;
         }
 
         #about-section p {
             flex: 1;
             margin: 0;
             padding: 0 20px;
+            font-size: 1.1em;
         }
 
         #about-section img {
             width: 150px;
             border-radius: 50%;
             margin-left: 20px;
+        }
+
+        /* Estilos para los proyectos individuales */
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .project-header {
+            cursor: pointer;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-header h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin: 0;
+        }
+
+        .project-header .tech {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .project-header .arrow {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .project-content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .project-content h3 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .project-content p {
+            font-size: 1em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .project-content ul {
+            list-style-type: disc;
+            margin: 10px 0 20px 20px;
+            padding-left: 20px;
+        }
+
+        .project-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .project.open .project-content {
+            display: block;
+        }
+
+        .project.open .arrow {
+            transform: rotate(180deg);
         }
 
         /* Ajuste para pantallas pequeñas */
@@ -200,6 +273,7 @@
             #about-section {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
             }
 
             #about-section img {
@@ -209,6 +283,14 @@
 
             .portfolio-container {
                 grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                padding: 10px;
+            }
+
+            .project-header h2 {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -238,61 +320,283 @@
 
     <!-- Contenido principal centrado -->
     <div class="container">
-        <!-- Sección Proyectos centrada -->
+        <!-- Sección Sobre mí ocupando todo el ancho con fondo gris y transparencia -->
+        <section id="about-section">
+            <p>Soy un analista de datos con una sólida formación en estadística y amplia experiencia en la
+                transformación de datos
+                en conocimiento estratégico. Especializado en el desarrollo de dashboards interactivos, automatización
+                de procesos y modelado predictivo,
+                utilizo herramientas como Power BI, Python y Machine Learning para optimizar la toma de decisiones. Mi
+                enfoque se centra en garantizar
+                la calidad y accesibilidad de los datos, diseñando soluciones analíticas que no solo visualizan
+                información,
+                sino que generan insights accionables para impulsar la eficiencia operativa y la innovación en las
+                organizaciones.</p>
+            <img src="foto.jpg" alt="Foto de perfil">
+        </section>
+
+        <!-- Sección Proyectos -->
         <section id="projects">
-            <h2>Dashboard de Análisis de Encuestas para Hotelería</h2>
-            <p>Este proyecto consiste en un dashboard interactivo diseñado para analizar los comentarios y quejas de los
-                huéspedes en un entorno hotelero. La herramienta permite a los departamentos identificar incidencias
-                específicas, clasificar comentarios mediante análisis de sentimiento y tomar decisiones basadas en datos
-                para mejorar la experiencia del cliente.</p>
+            <h2>Proyectos</h2>
 
-            <h3>Funcionalidades clave:</h3>
-            <ul>
-                <li>Análisis de comentarios por departamento y número de habitación.</li>
-                <li>Clasificación de comentarios en positivos, negativos y neutros.</li>
-                <li>Filtros interactivos para seguimiento de incidencias por fecha y área.</li>
-            </ul>
-
-            <h3>Impacto:</h3>
-            <ul>
-                <li>Mejora en la satisfacción del huésped.</li>
-                <li>Optimización de recursos y reducción de tiempos de respuesta.</li>
-                <li>Toma de decisiones estratégicas basada en datos.</li>
-            </ul>
-
-            <h3>Tecnologías utilizadas:</h3>
-            <ul>
-                <li>Power BI, Procesamiento de Lenguaje Natural (NLP).</li>
-            </ul>
-
-            <!-- Contenedor de portafolios en cuadrícula 2x2 -->
-            <div class="portfolio-container">
-                <div class="portfolio-item">
-                    <img src="Portafolio1.jpg" alt="Portafolio 1">
+            <!-- Proyecto 1 -->
+            <div class="project" onclick="toggleProject(this)">
+                <div class="project-header">
+                    <div>
+                        <h2>1. Dashboard de Análisis de Encuestas para Hotelería</h2>
+                        <div class="tech">Tecnologías aplicadas: Power BI, Analisis de Sentimientos, Procesamiento de
+                            Lenguaje Natural (NLP), Google Colab.
+                        </div>
+                    </div>
+                    <span class="arrow">▼</span>
                 </div>
-                <div class="portfolio-item">
-                    <img src="Portafolio2.jpg" alt="Portafolio 2">
+                <div class="project-content">
+                    <p>Este proyecto consiste en un dashboard interactivo diseñado para analizar los comentarios y
+                        quejas de los
+                        huéspedes en un entorno hotelero. La herramienta permite a los departamentos identificar
+                        incidencias
+                        específicas, clasificar comentarios mediante análisis de sentimiento y tomar decisiones basadas
+                        en datos
+                        para mejorar la experiencia del cliente.</p>
+
+                    <h3>Funcionalidades clave:</h3>
+                    <ul>
+                        <li>Análisis de comentarios por departamento y número de habitación.</li>
+                        <li>Clasificación de comentarios en positivos, negativos y neutros.</li>
+                        <li>Filtros interactivos para seguimiento de incidencias por fecha y área.</li>
+                    </ul>
+
+                    <h3>Impacto:</h3>
+                    <ul>
+                        <li>Mejora en la satisfacción del huésped.</li>
+                        <li>Optimización de recursos y reducción de tiempos de respuesta.</li>
+                        <li>Toma de decisiones estratégicas basada en datos.</li>
+                    </ul>
+
+                    <!-- Contenedor de portafolios en cuadrícula 2x2 -->
+                    <div class="portfolio-container">
+                        <div class="portfolio-item">
+                            <img src="Portafolio1.jpg" alt="Portafolio 1">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="Portafolio2.jpg" alt="Portafolio 2">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="Portafolio3.jpg" alt="Portafolio 3">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="Portafolio4.jpg" alt="Portafolio 4">
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="Portafolio3.jpg" alt="Portafolio 3">
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project" onclick="toggleProject(this)">
+                <div class="project-header">
+                    <div>
+                        <h2>2. Automatización y procesamiento ETL de noticias en la web</h2>
+                        <div class="tech">Tecnologías aplicadas: Python, Web Scraping, Selenium, BeautifulSoup, Power
+                            Query, Lenguaje
+                            M.</div>
+                    </div>
+                    <span class="arrow">▼</span>
                 </div>
-                <div class="portfolio-item">
-                    <img src="Portafolio4.jpg" alt="Portafolio 4">
+                <div class="project-content">
+                    <p>Este proyecto implementa un proceso de Extracción, Transformación y Carga (ETL) para recopilar y
+                        estructurar noticias
+                        desde un sitio web, facilitando su análisis y uso por analistas de datos y otros interesados.
+                    </p>
+
+                    <h3>Extracción de Datos:</h3>
+                    <ul>
+                        <li>Uso de Selenium y BeautifulSoup para hacer web scraping desde el portal web.</li>
+                        <li>Captura de información clave: título de la noticia, fecha y enlace.</li>
+                        <li>Almacenamiento en un archivo TXT para facilitar su procesamiento posterior.</li>
+                    </ul>
+                    <h3>Transformación de Datos:</h3>
+                    <ul>
+                        <li>Carga del archivo TXT en Power Query.</li>
+                        <li>Conversión y limpieza de datos: Incluye estandarización del formato de fecha, conversión de
+                            texto a tabla estructurada
+                            y eliminación de datos duplicados o incompletos.
+                        </li>
+                    </ul>
+                    <h3>Impacto:</h3>
+                    <ul>
+                        <li>Automatización del proceso de recopilación de noticias.</li>
+                        <li>Reducción del tiempo de búsqueda y estructuración de información.</li>
+                        <li>Facilitación del análisis de identificación de frases y palabras claves.</li>
+                    </ul>
+                    <!-- Bloque de código Python con fondo negro -->
+                    <div class="code-block">
+                        <pre><code>
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
+from time import gmtime, strftime
+import time
+
+url = "https://paginawebparascraping.com/"
+
+# Configuración del driver
+driver = webdriver.Chrome()
+driver.get(url)
+
+# Esperar que la página cargue completamente
+time.sleep(10)
+
+# Realizar scroll hacia abajo
+scroll_pause_time = 5  # Tiempo de espera entre scrolls
+
+# Hacer desplazamientos hacia abajo
+for _ in range(20):
+    # Hacer scroll hacia abajo
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    
+    # Esperar para que se carguen nuevos elementos
+    time.sleep(scroll_pause_time)
+
+# Extracción de info
+soup = BeautifulSoup(driver.page_source, "html.parser")
+articles = soup.find_all("article")
+print(f"Found {len(articles)} articles")  # Confirmar cantidad de artículos
+
+scraped_data = []
+for article in articles:
+    # Extraer los datos
+    link_tag = article.find("a", class_="bodytext content")
+    link = link_tag["href"] if link_tag else "No link found"
+
+    title_tag = article.find("h2")
+    title = title_tag.get_text(strip=True) if title_tag else "No title found"
+
+    date_tag = article.find("time")
+    date = date_tag["datetime"] if date_tag and date_tag.has_attr("datetime") else "No date found"
+
+    # Imprimir datos para depuración
+    print(f"Link: {link}")
+    print(f"Title: {title}")
+    print(f"Date: {date}")
+
+    # Agregar a la lista solo si todos los datos están disponibles
+    if link != "No link found" and title != "No title found" and date != "No date found":
+        scraped_data.append({"title": title, "link": link, "date": date})
+
+# Guardar los datos en un archivo .txt
+fecha = strftime("%Y-%m-%d %H-%M-%S", gmtime())
+file_name = f"cision_scraped_data_{fecha}.txt"
+
+with open(file_name, "w", encoding="utf-8") as file:
+    for entry in scraped_data:
+        file.write(f"Title: {entry['title']}\n")
+        file.write(f"Date: {entry['date']}\n")
+        file.write(f"Link: {entry['link']}\n")
+        file.write("\n")  # Línea vacía entre noticias
+
+# Mensaje final
+print(f"Datos guardados correctamente en '{file_name}'")
+
+# Cerrar el navegador
+driver.quit()
+                        </code></pre>
+                    </div>
+
+                    <!-- Contenedor de portafolios en cuadrícula 1x1 -->
+                    <div class="portfolio-container">
+                        <div class="portfolio-item">
+                            <img src="PortafolioA.jpg" alt="Portafolio A">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="PortafolioB.jpg" alt="Portafolio B">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project" onclick="toggleProject(this)">
+                <div class="project-header">
+                    <div>
+                        <h2>3. Análisis y Segmentación de Vinos con Machine Learning</h2>
+                        <div class="tech">Tecnologías aplicadas: Python, Pandas, Scikit-Learn, Matplotlib, numpy.</div>
+                    </div>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="project-content">
+                    <p>Este proyecto aplica técnicas de aprendizaje automático para analizar y segmentar diferentes
+                        variedades de vino a partir de sus
+                        características químicas. Utilizando el dataset Wine Recognition de Scikit-Learn, se implementa
+                        un flujo de trabajo basado en reducción
+                        de dimensionalidad y clustering para identificar patrones en los datos sin necesidad de
+                        etiquetas predefinidas.</p>
+
+                    <h3>Metodología:</h3>
+                    <ul>
+                        <li>Normalización de Datos: Los datos son transformados restando la media y dividiendo por la
+                            desviación estándar para asegurar comparabilidad.</li>
+                        <li>Reducción de Dimensionalidad: Se aplica Análisis de Componentes Principales (PCA) para
+                            reducir la dimensionalidad a dos componentes principales y visualizar los datos en un
+                            gráfico de dispersión.</li>
+                        <li>División del Conjunto de Datos: Se separan los datos en entrenamiento y prueba usando
+                            train_test_split con una proporción entre 20% y 30% para evaluación.</li>
+                        <li>Clustering con K-Means: Se prueba el algoritmo K-Means con distintos valores de K (2 a 5) y
+                            se evalúa el rendimiento con Adjusted Rand Score.</li>
+                        <li>Clustering con Propagación de Afinidad: Se evalúa el algoritmo Affinity Propagation para
+                            segmentar los datos sin etiquetas y se mide la precisión obtenida, buscando alcanzar al
+                            menos un 90%.</li>
+                        <li>Interpretación de Resultados: Se analizan las diferencias entre los métodos de clustering y
+                            la efectividad de PCA en la reducción de dimensionalidad.</li>
+                    </ul>
+
+                    <h3>Impacto:</h3>
+                    <ul>
+                        <li>Preprocesamiento de datos, reducción de dimensionalidad y clustering no supervisado.</li>
+                        <li>Extración de patrones en conjuntos de datos sin etiquetas, aplicable a diversos sectores
+                            como segmentación de clientes, análisis de productos entre otros.</li>
+                    </ul>
+                    <h3>Resultado:</h3>
+                    <ul>
+                        <li>Tras evaluar el desempeño del algoritmo K-Means con diferentes valores de K, se observó que
+                            el mejor resultado de Adjusted Rand Score (ARS) se obtuvo con K=3, alcanzando un valor de
+                            0.93. Este resultado es consistente con la naturaleza del conjunto de datos, ya que el
+                            dataset contiene etiquetas reales de tres clases de vinos.
+                            Con K=4, el ARS disminuyó a 0.76, lo que indica que el modelo estaba forzando la división de
+                            una de las tres clases originales en dos clústeres, afectando la correspondencia con las
+                            categorías reales.
+                            Para K=5, el rendimiento se redujo aún más debido a una segmentación excesiva en clases
+                            innecesarias.
+                            Con K=2, el desempeño fue el más bajo, dado que agrupar los vinos en solo dos categorías no
+                            representa adecuadamente la variabilidad del dataset.
+                            En cuanto a la aplicación del algoritmo de propagación de afinidad, se obtuvo un ARS de
+                            0.93, cumpliendo con la condición establecida de superar el 90% de precisión. Esto indica
+                            que el modelo logró identificar patrones en los datos alineándose con las categorías reales
+                            del conjunto de datos, a pesar de tratarse de un modelo de aprendizaje no supervisado, donde
+                            las etiquetas originales no fueron utilizadas en el proceso de entrenamiento.
+                            Estos resultados demuestran la eficacia de las técnicas de clustering para segmentar datos
+                            sin etiquetas y refuerzan la importancia de seleccionar el número óptimo de clústeres en
+                            problemas de clasificación no supervisada.
+                        </li>
+                    </ul>
+                    <!-- Contenedor de portafolios en cuadrícula 2x2 -->
+                    <div class="portfolio-container">
+                        <div class="portfolio-item">
+                            <img src="Graficovinos.png" alt="Portafolio 3">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Saltos de línea -->
-        <br><br><br><br>
-
-        <!-- Sección Sobre mí ocupando todo el ancho con mismo fondo que la navbar -->
-        <section id="about-section">
-            <p>Soy un analista de datos apasionado por transformar datos en insights para decisiones estratégicas. Me
-                especializo en transformar datos en insights accionables mediante dashboards y reportes visuales que
-                facilitan la toma de decisiones.</p>
-            <img src="foto.jpg" alt="Foto de perfil">
-        </section>
     </div>
+
+    <script>
+        // Función para alternar la visibilidad del contenido del proyecto
+        function toggleProject(project) {
+            project.classList.toggle("open");
+        }
+    </script>
 
 </body>
 
