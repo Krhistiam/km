@@ -23,16 +23,19 @@
             opacity: 0.8;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            /* Alinea el contenido a la izquierda */
             color: white;
-            text-align: center;
-            flex-direction: column;
+            text-align: left;
+            /* Alinea el texto a la izquierda */
+            padding-left: 10%;
+            /* Mueve el contenido más a la izquierda */
         }
 
         /* Texto sobre la imagen */
         .header-content {
-            margin-left: 3cm;
-            padding-left: 50px;
+            max-width: 600px;
+            /* Limita el ancho del contenido */
         }
 
         .header-content h1 {
@@ -258,6 +261,41 @@
             transform: rotate(180deg);
         }
 
+        /* Estilos para la sección de Contacto */
+        #contact {
+            width: 80%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        #contact h2 {
+            font-size: 2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
         /* Ajuste para pantallas pequeñas */
         @media (max-width: 768px) {
             .navbar .links {
@@ -301,9 +339,9 @@
     <!-- Imagen de portada -->
     <div class="header-image">
         <div class="header-content">
-            <h1>HI! I'M Krhistiam</h1>
-            <p>Analista de datos</p>
-            <a href="#about-section" class="about-button">About Me</a>
+            <h1>¡Hola!👋Soy Krhistiam, </h1>
+            <p>📊 Analista de datos | Visualización de Datos | Machine Learning</p>
+            <p>💻 Transformando datos complejos en decisiones estratégicas.</p>
         </div>
     </div>
 
@@ -311,9 +349,9 @@
     <div class="navbar">
         <div class="title">Krhistiam Marcano</div>
         <div class="links">
-            <a href="#projects">Proyectos</a>
-            <a href="CV_Krhistiam.pdf" target="_blank">CV</a>
-            <a href="#about-section">Sobre mí</a>
+            <a href="#projects">Ver Mis Proyectos</a>
+            <a href="CV_Krhistiam.pdf" target="_blank">Mi CV</a>
+            <a href="#about-section">Conoce Más Sobre Mí</a>
             <a href="#contact">Contacto</a>
         </div>
     </div>
@@ -343,7 +381,7 @@
             <div class="project" onclick="toggleProject(this)">
                 <div class="project-header">
                     <div>
-                        <h2>1. Dashboard de Análisis de Encuestas para Hotelería</h2>
+                        <h2>1. Dashboard de Análisis de Comentarios y Quejas para Hoteles</h2>
                         <div class="tech">Tecnologías aplicadas: Power BI, Analisis de Sentimientos, Procesamiento de
                             Lenguaje Natural (NLP), Google Colab.
                         </div>
@@ -351,19 +389,18 @@
                     <span class="arrow">▼</span>
                 </div>
                 <div class="project-content">
-                    <p>Este proyecto consiste en un dashboard interactivo diseñado para analizar los comentarios y
-                        quejas de los
-                        huéspedes en un entorno hotelero. La herramienta permite a los departamentos identificar
-                        incidencias
-                        específicas, clasificar comentarios mediante análisis de sentimiento y tomar decisiones basadas
-                        en datos
-                        para mejorar la experiencia del cliente.</p>
+                    <p>Desarrollé un dashboard interactivo para analizar y visualizar los comentarios y quejas de los
+                        huéspedes en un entorno hotelero.
+                        La herramienta permite identificar incidencias, clasificar
+                        comentarios mediante análisis de sentimiento y tomar decisiones basadas en datos para mejorar la
+                        experiencia del cliente.</p>
 
                     <h3>Funcionalidades clave:</h3>
                     <ul>
                         <li>Análisis de comentarios por departamento y número de habitación.</li>
                         <li>Clasificación de comentarios en positivos, negativos y neutros.</li>
                         <li>Filtros interactivos para seguimiento de incidencias por fecha y área.</li>
+                        <li>Visualización de la evolución de quejas y comentarios semana tras semana.</li>
                     </ul>
 
                     <h3>Impacto:</h3>
@@ -372,7 +409,26 @@
                         <li>Optimización de recursos y reducción de tiempos de respuesta.</li>
                         <li>Toma de decisiones estratégicas basada en datos.</li>
                     </ul>
+                    <h3>Conclusión:</h3>
+                    <ul>
+                        <li>Este proyecto no solo mejoró la satisfacción del huésped, sino que también transformó la
+                            gestión operativa y estratégica del hotel. Los equipos departamentales, que antes tenían una
+                            visión limitada debido a la alta demanda operativa, ahora cuentan con una herramienta que
+                            les permite identificar problemas, delegar funciones y reconocer el desempeño de su
+                            personal.
 
+                            Por ejemplo, los gerentes pudieron identificar a los miembros del equipo de limpieza y
+                            mantenimiento que recibieron comentarios positivos de manera consistente, lo que facilitó la
+                            toma de decisiones sobre promociones y recompensas. Además, el dashboard se ha convertido en
+                            una herramienta clave para RRHH y los gerentes de área en la evaluación del personal bajo
+                            prueba, asegurando que el nuevo talento cumpla con los estándares esperados.
+
+                            La evolución semanal de las métricas por departamento ha permitido monitorear el progreso de
+                            las iniciativas de mejora y ajustar estrategias en función de los resultados. Esto no solo
+                            ha optimizado la operación, sino que también ha fortalecido la cultura organizacional,
+                            fomentando la transparencia, el reconocimiento al mérito y la mejora continua.
+                        </li>
+                    </ul>
                     <!-- Contenedor de portafolios en cuadrícula 2x2 -->
                     <div class="portfolio-container">
                         <div class="portfolio-item">
@@ -403,30 +459,43 @@
                     <span class="arrow">▼</span>
                 </div>
                 <div class="project-content">
-                    <p>Este proyecto implementa un proceso de Extracción, Transformación y Carga (ETL) para recopilar y
-                        estructurar noticias
-                        desde un sitio web, facilitando su análisis y uso por analistas de datos y otros interesados.
+                    <p>Implementé un proceso de ETL para recopilar y estructurar noticias desde un sitio web,
+                        optimizando su análisis
+                        y uso por parte de los interesados.
+                        Este proyecto transformó un proceso manual y tedioso en uno automatizado, eficiente y escalable.
+                    </p>
+                    <p>En principio, el equipo realizaba este proceso de manera manual, lo que implicaba navegar por
+                        cada sección del
+                        sitio web,
+                        identificar información relevante y estructurarla manualmente. Este enfoque era lento,
+                        propenso a errores y limitaba la capacidad del equipo para analizar grandes volúmenes de datos.
                     </p>
 
-                    <h3>Extracción de Datos:</h3>
+                    <h3>Funcionalidades claves:</h3>
                     <ul>
-                        <li>Uso de Selenium y BeautifulSoup para hacer web scraping desde el portal web.</li>
-                        <li>Captura de información clave: título de la noticia, fecha y enlace.</li>
-                        <li>Almacenamiento en un archivo TXT para facilitar su procesamiento posterior.</li>
-                    </ul>
-                    <h3>Transformación de Datos:</h3>
-                    <ul>
-                        <li>Carga del archivo TXT en Power Query.</li>
-                        <li>Conversión y limpieza de datos: Incluye estandarización del formato de fecha, conversión de
-                            texto a tabla estructurada
-                            y eliminación de datos duplicados o incompletos.
+                        <li>Extracción de Datos: Uso de Selenium y BeautifulSoup para realizar web scraping.</li>
+                        <li>Almacenamiento: Generación de un archivo TXT con toda la información para su procesamiento
+                            posterior.
                         </li>
+                        <li>Transformación de Datos: Estructuración y limpieza de datos con Power Query.</li>
+                        <li>Enriquecimiento de Datos: Identificación de palabras clave, fechas, enlaces y frases
+                            relevantes.</li>
+                        <li>Automatización Semanal: Ejecución automática del script de Python cada semana.</li>
                     </ul>
                     <h3>Impacto:</h3>
                     <ul>
                         <li>Automatización del proceso de recopilación de noticias.</li>
                         <li>Reducción del tiempo de búsqueda y estructuración de información.</li>
                         <li>Facilitación del análisis de identificación de frases y palabras claves.</li>
+                    </ul>
+                    <h3>Conclusión:</h3>
+                    <ul>
+                        <li>Este proyecto demostró cómo la automatización de procesos ETL puede transformar la manera en
+                            que las
+                            organizaciones recopilan y analizan información. Al implementar un sistema automatizado para
+                            la extracción y transformación de noticias,
+                            el equipo logró reducir el tiempo de recopilación,
+                            mejorar la calidad de los datos y detectar oportunidades clave de manera más eficiente.</li>
                     </ul>
                     <!-- Bloque de código Python con fondo negro -->
                     <div class="code-block">
@@ -520,35 +589,32 @@ driver.quit()
             <div class="project" onclick="toggleProject(this)">
                 <div class="project-header">
                     <div>
-                        <h2>3. Análisis y Segmentación de Vinos con Machine Learning</h2>
-                        <div class="tech">Tecnologías aplicadas: Python, Pandas, Scikit-Learn, Matplotlib, numpy.</div>
+                        <h2>3. Análisis y Clasificación de Vinos utilizando Modelos de Machine Learning</h2>
+                        <div class="tech">Tecnologías aplicadas: Python, Regresión Logística, K-Nearest Neighbors (KNN),
+                            Máquinas de Vector Soporte (SVM), Scikit-Learn,
+                            Matplotlib, numpy.</div>
                     </div>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="project-content">
-                    <p>Este proyecto aplica técnicas de aprendizaje automático para analizar y segmentar diferentes
-                        variedades de vino a partir de sus
-                        características químicas. Utilizando el dataset Wine Recognition de Scikit-Learn, se implementa
-                        un flujo de trabajo basado en reducción
-                        de dimensionalidad y clustering para identificar patrones en los datos sin necesidad de
-                        etiquetas predefinidas.</p>
-
+                    <p>En este proyecto, desarrollé y evalué modelos de Machine Learning para clasificar vinos en tres
+                        categorías basándome en 13 atributos numéricos.
+                        Utilicé técnicas de preprocesamiento, como la normalización de datos, y comparé el rendimiento
+                        de modelos de Regresión Logística, KNN y SVM..</p>
+                    <h3>Objetivo:</h3>
+                    <ul>
+                        <li>El objetivo fue predecir la clase de vino utilizando el conjunto de datos "Wine Recognition
+                            Dataset" de Scikit-Learn,
+                            logrando precisiones superiores al 95%.</li>
+                    </ul>
                     <h3>Metodología:</h3>
                     <ul>
-                        <li>Normalización de Datos: Los datos son transformados restando la media y dividiendo por la
-                            desviación estándar para asegurar comparabilidad.</li>
-                        <li>Reducción de Dimensionalidad: Se aplica Análisis de Componentes Principales (PCA) para
-                            reducir la dimensionalidad a dos componentes principales y visualizar los datos en un
-                            gráfico de dispersión.</li>
-                        <li>División del Conjunto de Datos: Se separan los datos en entrenamiento y prueba usando
-                            train_test_split con una proporción entre 20% y 30% para evaluación.</li>
-                        <li>Clustering con K-Means: Se prueba el algoritmo K-Means con distintos valores de K (2 a 5) y
-                            se evalúa el rendimiento con Adjusted Rand Score.</li>
-                        <li>Clustering con Propagación de Afinidad: Se evalúa el algoritmo Affinity Propagation para
-                            segmentar los datos sin etiquetas y se mide la precisión obtenida, buscando alcanzar al
-                            menos un 90%.</li>
-                        <li>Interpretación de Resultados: Se analizan las diferencias entre los métodos de clustering y
-                            la efectividad de PCA en la reducción de dimensionalidad.</li>
+                        <li>Carga y Preprocesamiento: Normalicé los datos para mejorar el rendimiento de los modelos.
+                        </li>
+                        <li>División de Datos: Separé los datos en conjuntos de entrenamiento (75%) y prueba (25%).</li>
+                        <li>Modelos Evaluados: Regresión Logística, KNN y SVM..</li>
+                        <li>Evaluación: Utilicé precisión (accuracy) y matrices de confusión para comparar los modelos.
+                        </li>
                     </ul>
 
                     <h3>Impacto:</h3>
@@ -557,36 +623,57 @@ driver.quit()
                         <li>Extración de patrones en conjuntos de datos sin etiquetas, aplicable a diversos sectores
                             como segmentación de clientes, análisis de productos entre otros.</li>
                     </ul>
-                    <h3>Resultado:</h3>
+                    <h3>Resultados:</h3>
                     <ul>
-                        <li>Tras evaluar el desempeño del algoritmo K-Means con diferentes valores de K, se observó que
-                            el mejor resultado de Adjusted Rand Score (ARS) se obtuvo con K=3, alcanzando un valor de
-                            0.93. Este resultado es consistente con la naturaleza del conjunto de datos, ya que el
-                            dataset contiene etiquetas reales de tres clases de vinos.
-                            Con K=4, el ARS disminuyó a 0.76, lo que indica que el modelo estaba forzando la división de
-                            una de las tres clases originales en dos clústeres, afectando la correspondencia con las
-                            categorías reales.
-                            Para K=5, el rendimiento se redujo aún más debido a una segmentación excesiva en clases
-                            innecesarias.
-                            Con K=2, el desempeño fue el más bajo, dado que agrupar los vinos en solo dos categorías no
-                            representa adecuadamente la variabilidad del dataset.
-                            En cuanto a la aplicación del algoritmo de propagación de afinidad, se obtuvo un ARS de
-                            0.93, cumpliendo con la condición establecida de superar el 90% de precisión. Esto indica
-                            que el modelo logró identificar patrones en los datos alineándose con las categorías reales
-                            del conjunto de datos, a pesar de tratarse de un modelo de aprendizaje no supervisado, donde
-                            las etiquetas originales no fueron utilizadas en el proceso de entrenamiento.
-                            Estos resultados demuestran la eficacia de las técnicas de clustering para segmentar datos
-                            sin etiquetas y refuerzan la importancia de seleccionar el número óptimo de clústeres en
-                            problemas de clasificación no supervisada.
+                        <li>Regresión Logística: 98% de precisión con datos normalizados.</li>
+                        <li>KNN: 96% de precisión con datos normalizados.</li>
+                        <li>SVM: 98% de precisión con datos originales y normalizados.
+                        </li>
+                    </ul>
+                    <h3>Conclusión:</h3>
+                    <ul>
+                        <li>Los modelos de Regresión Logística y SVM mostraron el mejor rendimiento, con una precisión
+                            del 98%.
+                            El KNN con datos normalizados también fue efectivo, aunque con una precisión ligeramente
+                            inferior (96%).
+                            Este proyecto demostró la importancia del preprocesamiento de datos y la selección adecuada
+                            de algoritmos para tareas de clasificación.
                         </li>
                     </ul>
                     <!-- Contenedor de portafolios en cuadrícula 2x2 -->
                     <div class="portfolio-container">
                         <div class="portfolio-item">
-                            <img src="Graficovinos.png" alt="Portafolio 3">
+                            <img src="Graficovinos.png" alt="Portafolio 1.3">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="Regresionlogistica.png" alt="Portafolio 2.3">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="KNN.png" alt="Portafolio 3.3">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="SVM.png" alt="Portafolio 4.3">
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <div class="contact-item">
+                <img src="Gmail.png" alt="Gmail">
+                <span>Correo electrónico: krhistiammarcano@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <img src="whatsapp.png" alt="WhatsApp">
+                <span>Teléfono: +54 9 11 23880838</span>
+            </div>
+            <div class="contact-item">
+                <img src="LinkedIn.png" alt="LinkedIn">
+                <span>URL LinkedIn: <a href="https://www.linkedin.com/in/krhistiam/"
+                        target="_blank">https://www.linkedin.com/in/krhistiam/</a></span>
             </div>
         </section>
     </div>
