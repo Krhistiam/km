@@ -16,7 +16,6 @@
             --dark-text: #f4f4f4;
             --dark-container-bg: #2a2a2a;
             --dark-toggle-bg: #555;
-            /* Color gris para el botón de modo oscuro */
         }
 
         body {
@@ -28,7 +27,6 @@
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
             overflow-x: hidden;
-            /* Elimina el scroll horizontal */
         }
 
         body.dark-mode {
@@ -90,22 +88,6 @@
             }
         }
 
-        .header-content .about-button {
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: var(--primary-color);
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .header-content .about-button:hover {
-            background-color: #e6b800;
-            transform: scale(1.05);
-        }
-
         /* Barra de navegación */
         .navbar {
             position: absolute;
@@ -149,27 +131,6 @@
 
         .navbar .links a:hover {
             color: var(--primary-color);
-        }
-
-        /* Iconos de contacto en la barra de navegación */
-        .navbar-icons {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .navbar-icons a {
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .navbar-icons a:hover {
-            transform: scale(1.1);
-        }
-
-        .navbar-icons img {
-            width: 24px;
-            height: 24px;
         }
 
         /* Contenedor principal */
@@ -242,7 +203,6 @@
 
         body.dark-mode #projects h2 {
             color: var(--dark-text);
-            /* Título "Proyectos" en blanco en modo oscuro */
         }
 
         .project {
@@ -286,7 +246,6 @@
 
         body.dark-mode .project-header h2 {
             color: var(--dark-text);
-            /* Títulos de los proyectos en blanco en modo oscuro */
         }
 
         .project-header .tech {
@@ -354,25 +313,90 @@
             display: block;
         }
 
-        /* Modo oscuro */
+        /* Elemento flotante de contacto */
+        .floating-contact {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--dark-toggle-bg);
+            color: white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 2s forwards;
+        }
+
+        body.dark-mode .floating-contact {
+            background-color: #555;
+        }
+
+        .floating-contact:hover {
+            background-color: #666;
+        }
+
+        .floating-contact-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .floating-contact-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .floating-contact-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .floating-contact-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .floating-contact-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Botón de modo oscuro */
         .dark-mode-toggle {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background-color: var(--dark-toggle-bg);
-            /* Color gris */
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.3s;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 2s forwards;
         }
 
         .dark-mode-toggle:hover {
             background-color: #666;
-            /* Gris más oscuro al hacer hover */
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* Responsive */
@@ -430,9 +454,18 @@
                 padding-left: 5%;
             }
 
-            .navbar-icons img {
-                width: 20px;
-                height: 20px;
+            /* Ajustes para móviles */
+            .floating-contact {
+                bottom: 70px;
+                left: 10px;
+                padding: 8px 12px;
+            }
+
+            .dark-mode-toggle {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 0.9em;
             }
         }
 
@@ -469,7 +502,7 @@
                 font-size: 0.9em;
             }
 
-            .navbar-icons img {
+            .floating-contact-icons img {
                 width: 18px;
                 height: 18px;
             }
@@ -491,18 +524,7 @@
     <!-- Barra de navegación -->
     <div class="navbar">
         <div class="title-container">
-            <div class="title">Contáctame:</div>
-            <div class="navbar-icons">
-                <a href="https://www.linkedin.com/in/krhistiam/" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="mailto:krhistiammarcano@gmail.com" target="_blank">
-                    <img src="gmail.png" alt="Gmail">
-                </a>
-                <a href="https://wa.me/5491123880838" target="_blank">
-                    <img src="whatsapp.png" alt="WhatsApp">
-                </a>
-            </div>
+            <div class="title">Krhistiam Marcano</div>
         </div>
         <div class="links">
             <a href="#projects">Proyectos</a>
@@ -764,6 +786,22 @@ driver.quit()
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- Elemento flotante de contacto -->
+    <div class="floating-contact">
+        <span class="floating-contact-label">Contáctame:</span>
+        <div class="floating-contact-icons">
+            <a href="https://www.linkedin.com/in/krhistiam/" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="mailto:krhistiammarcano@gmail.com" target="_blank">
+                <img src="gmail.png" alt="Gmail">
+            </a>
+            <a href="https://wa.me/5491123880838" target="_blank">
+                <img src="whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
     </div>
 
     <!-- Botón de modo oscuro -->
