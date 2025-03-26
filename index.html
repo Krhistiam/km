@@ -121,6 +121,12 @@
             z-index: 1000;
         }
 
+        .navbar .title-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .navbar .title {
             font-size: 1.2em;
             font-weight: bold;
@@ -143,6 +149,27 @@
 
         .navbar .links a:hover {
             color: var(--primary-color);
+        }
+
+        /* Iconos de contacto en la barra de navegación */
+        .navbar-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .navbar-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .navbar-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-icons img {
+            width: 24px;
+            height: 24px;
         }
 
         /* Contenedor principal */
@@ -327,45 +354,6 @@
             display: block;
         }
 
-        /* Sección Contacto */
-        #contact {
-            width: 80%;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-
-        #contact h2 {
-            font-size: 2em;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        body.dark-mode #contact h2 {
-            color: var(--dark-text);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-item img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .contact-item a {
-            color: #0073e6;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
         /* Modo oscuro */
         .dark-mode-toggle {
             position: fixed;
@@ -389,14 +377,21 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .navbar .links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
             .navbar {
                 padding: 10px;
                 flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .title-container {
+                width: 100%;
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+
+            .navbar .links {
+                width: 100%;
+                justify-content: space-around;
             }
 
             #about-section {
@@ -434,6 +429,11 @@
             .header-image {
                 padding-left: 5%;
             }
+
+            .navbar-icons img {
+                width: 20px;
+                height: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -469,17 +469,9 @@
                 font-size: 0.9em;
             }
 
-            #contact h2 {
-                font-size: 1.5em;
-            }
-
-            .contact-item img {
-                width: 20px;
-                height: 20px;
-            }
-
-            .contact-item span {
-                font-size: 0.9em;
+            .navbar-icons img {
+                width: 18px;
+                height: 18px;
             }
         }
     </style>
@@ -498,12 +490,24 @@
 
     <!-- Barra de navegación -->
     <div class="navbar">
-        <div class="title">Krhistiam Marcano</div>
+        <div class="title-container">
+            <div class="title">Contáctame:</div>
+            <div class="navbar-icons">
+                <a href="https://www.linkedin.com/in/krhistiam/" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:krhistiammarcano@gmail.com" target="_blank">
+                    <img src="gmail.png" alt="Gmail">
+                </a>
+                <a href="https://wa.me/5491123880838" target="_blank">
+                    <img src="whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
         <div class="links">
             <a href="#projects">Proyectos</a>
             <a href="CV_Krhistiam.pdf" target="_blank">Mi CV</a>
             <a href="#about-section">Sobre Mí</a>
-            <a href="#contact">Contacto</a>
         </div>
     </div>
 
@@ -758,24 +762,6 @@ driver.quit()
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Sección Contacto -->
-        <section id="contact">
-            <h2>Contacto</h2>
-            <div class="contact-item">
-                <img src="gmail.png" alt="Gmail">
-                <span>Correo electrónico: krhistiammarcano@gmail.com</span>
-            </div>
-            <div class="contact-item">
-                <img src="whatsapp.png" alt="WhatsApp">
-                <span>Teléfono: +54 9 11 23880838</span>
-            </div>
-            <div class="contact-item">
-                <img src="linkedin.png" alt="LinkedIn">
-                <span>LinkedIn: <a href="https://www.linkedin.com/in/krhistiam/"
-                        target="_blank">https://www.linkedin.com/in/krhistiam/</a></span>
             </div>
         </section>
     </div>
